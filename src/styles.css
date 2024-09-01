@@ -89,8 +89,31 @@ h6 {
   align-items: center;
   height:100vh;
 }
-.frame{
+.slide{
   background-color: rgba(0, 0, 0, 0.075);
-  width:80%;
-  height:80%;
+  display:none;
+  position:relative;
+  width:50%;
+  height:40%;
+  .credit{
+    position:absolute;
+    bottom:0;
+    right:0;
+    color:white;
+    >a{
+      color:white;
+    }
+  }
+  .imageNumber{
+    position:absolute;
+    color:white;
+  }
+  }
+  .slide img{
+    vertical-align: middle;
+    width:100%;
+    height:100%;
+  }
+.activeSlide{
+  display:block;
 }
