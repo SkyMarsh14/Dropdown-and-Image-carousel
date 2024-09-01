@@ -1,6 +1,16 @@
-export default function toggleVisible(){
-    const dropdown=document.querySelector('.dropdown');
-    dropdown.addEventListener("click",()=>{
-        dropdown.classList.toggle('visible');
-    })
+const dropdownBtn = document.querySelector(".dropdownBtn");
+const dropdownContent = document.querySelector(".dropdown-content");
+export default function toggleVisible() {
+  dropdownBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdownContent.classList.toggle("visible");
+  });
+  hideDropdownOnWindowClick();
+}
+
+function hideDropdownOnWindowClick(){
+    document.addEventListener("click",()=>
+        dropdownContent.classList.contains('visible') && dropdownContent.classList.remove('visible')
+
+    );
 }

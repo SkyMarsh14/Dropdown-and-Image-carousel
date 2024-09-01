@@ -1,4 +1,4 @@
 import "./styles.css";
-import dropdonwVisible from "./dropdown.js";
+import toggleDropdown from "./dropdown.js";
 
-dropdonwVisible();
+toggleDropdown();
