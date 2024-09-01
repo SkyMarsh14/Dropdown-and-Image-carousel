@@ -83,3 +83,14 @@ h6 {
 .dropdownBtn{
   width:100%;
 }
+.carousel-container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+}
+.frame{
+  background-color: rgba(0, 0, 0, 0.075);
+  width:80%;
+  height:80%;
+}
