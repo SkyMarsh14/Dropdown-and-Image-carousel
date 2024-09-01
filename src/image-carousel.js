@@ -1,18 +1,19 @@
-const slides=document.querySelectorAll('.slide');
-const slideIndex=0;
-const getCurrentSlide=()=>slides[slideIndex];
+const slides = document.querySelectorAll(".slide");
+const slideIndex = 0;
+const getCurrentSlide = () => slides[slideIndex];
+const prevArrow = document.querySelector(".prevArrow");
+const nextArrow = document.querySelector(".nextArrow");
 
-
-export default class SlideControll{
-
-    static showSlide(){
-        slides.forEach((slide)=>slide.classList.remove('activeSlide'));
-        const currentSlide = getCurrentSlide();
-        currentSlide.classList.add('activeSlide');
-    
-    }
-
-    static forward(){
-        slideIndex+=1;
-    }
+function showSlide() {
+  slides.forEach((slide) => slide.classList.remove("activeSlide"));
+  const currentSlide = getCurrentSlide();
+  currentSlide.classList.add("activeSlide");
+}
+function forward() {
+  slideIndex += 1;
+  getCurrentSlide();
+}
+function backward(){
+    slideIndex -=1;
+    getCurrentSlide();
 }

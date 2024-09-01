@@ -60,7 +60,9 @@ h6 {
 #__next {
   isolation: isolate;
 }
-
+:root{
+  --arrow-side-padding:8px;
+}
 .dropdown-content {
   display: none;
   flex-direction: column;
@@ -84,19 +86,20 @@ h6 {
   width:100%;
 }
 .carousel-container{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  height:100vh;
+  width:50vw;
+  margin:auto;
+  margin-top:5em;
+  position:relative;
 }
 .slide{
   background-color: rgba(0, 0, 0, 0.075);
+  width:50vw;
+  height:45vh;
   display:none;
   position:relative;
-  width:50%;
-  height:40%;
   .credit{
     position:absolute;
+    padding:0 7px;
     bottom:0;
     right:0;
     color:white;
@@ -116,4 +119,23 @@ h6 {
   }
 .activeSlide{
   display:block;
+}
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:3em;
+  padding:8px 0;
+  cursor:pointer;
+}
+.arrow:hover{
+  background-color:rgba(0, 0, 0, 0.8);
+}
+.prevArrow{
+  left:0;
+  padding-right:var(--arrow-side-padding);
+}
+.nextArrow{
+  right:0;
+  padding-left:var(--arrow-side-padding);
 }
