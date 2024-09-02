@@ -11,6 +11,7 @@ function showSlide() {
   slides.forEach((slide) => slide.classList.remove("activeSlide"));
   const currentSlide = getCurrentSlide();
   currentSlide.classList.add("activeSlide");
+  advanceSlide();
 }
 function moveForward() {
   slideIndex=(slideIndex+1);
@@ -35,6 +36,10 @@ dots.forEach((dot,index)=>{
 function markActiveDot(){
   dots.forEach((d)=>d.classList.remove('activeDot'));
   dots[getCurrentSlideIndex()].classList.add('activeDot');
+}
+
+function advanceSlide(){
+  setTimeout(moveForward,5000);
 }
 
 export {showSlide,moveForward,moveBackward}
