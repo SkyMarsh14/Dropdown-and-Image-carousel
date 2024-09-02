@@ -20,7 +20,7 @@ function moveForward() {
   showSlide();
 }
 function moveBackward() {
-  slidesIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+  slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
   showSlide();
 }
 prevArrow.addEventListener("click", () => {
@@ -37,8 +37,8 @@ dots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
     slideIndex = index;
     markActiveDot();
-    showSlide();
     clearTimeout(autoAdvancedTimeout);
+    showSlide();
   });
 });
 function markActiveDot() {
