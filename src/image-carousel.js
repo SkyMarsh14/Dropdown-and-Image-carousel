@@ -1,10 +1,12 @@
+let autoAdvancedTimeout;
 const slides = document.querySelectorAll(".slide");
 let slideIndex = 0;
+const totalSlides = slides.length;
 const getCurrentSlide = () => slides[slideIndex];
-const getCurrentSlideIndex=()=>slideIndex;
+const getCurrentSlideIndex = () => slideIndex;
 const prevArrow = document.querySelector(".prevArrow");
 const nextArrow = document.querySelector(".nextArrow");
-const dots=document.querySelectorAll('.dots');
+const dots = document.querySelectorAll(".dots");
 
 function showSlide() {
   markActiveDot();
@@ -14,32 +16,39 @@ function showSlide() {
   advanceSlide();
 }
 function moveForward() {
-  slideIndex=(slideIndex+1);
-  if(slideIndex===3) slideIndex=0;
+  slideIndex = (slideIndex + 1) % totalSlides;
   showSlide();
 }
-function moveBackward(){
-  slideIndex=(slideIndex-1);
-  if(slideIndex===-1) slideIndex=2;
+function moveBackward() {
+  slidesIndex = (slideIndex - 1 + totalSlides) % totalSlides;
   showSlide();
 }
-prevArrow.addEventListener("click",()=>moveBackward());
-nextArrow.addEventListener("click",()=>moveForward());
+prevArrow.addEventListener("click", () => {
+  clearTimeout(autoAdvancedTimeout);
 
-dots.forEach((dot,index)=>{
-  dot.addEventListener("click",()=>{
-    slideIndex=index;
+  moveBackward();
+});
+nextArrow.addEventListener("click", () => {
+  clearTimeout(autoAdvancedTimeout);
+  moveForward();
+});
+
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    slideIndex = index;
     markActiveDot();
     showSlide();
-  })
-})
-function markActiveDot(){
-  dots.forEach((d)=>d.classList.remove('activeDot'));
-  dots[getCurrentSlideIndex()].classList.add('activeDot');
+    clearTimeout(autoAdvancedTimeout);
+  });
+});
+function markActiveDot() {
+  dots.forEach((d) => d.classList.remove("activeDot"));
+  dots[getCurrentSlideIndex()].classList.add("activeDot");
 }
 
-function advanceSlide(){
-  setTimeout(moveForward,5000);
+function advanceSlide() {
+  clearTimeout(autoAdvancedTimeout);
+  autoAdvancedTimeout = setTimeout(moveForward, 5000);
 }
 
-export {showSlide,moveForward,moveBackward}
+export { showSlide, moveForward, moveBackward };

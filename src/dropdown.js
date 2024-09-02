@@ -8,9 +8,11 @@ export default function toggleVisible() {
   hideDropdownOnWindowClick();
 }
 
-function hideDropdownOnWindowClick(){
-    document.addEventListener("click",()=>
-        dropdownContent.classList.contains('visible') && dropdownContent.classList.remove('visible')
-
-    );
+function hideDropdownOnWindowClick() {
+  document.addEventListener(
+    "click",
+    () =>
+      dropdownContent.classList.contains("visible") &&
+      dropdownContent.classList.remove("visible"),
+  );
 }

@@ -60,10 +60,10 @@ h6 {
 #__next {
   isolation: isolate;
 }
-:root{
-  --arrow-side-padding:8px;
-  --dots-not-active:#bbb;
-  --dots-active:#3f3939;
+:root {
+  --arrow-side-padding: 8px;
+  --dots-not-active: #bbb;
+  --dots-active: #3f3939;
 }
 .dropdown-content {
   display: none;
@@ -81,78 +81,79 @@ h6 {
 .dropdown-container {
   width: 150px;
   position: fixed;
-  top:0;
-  right:0;
+  top: 0;
+  right: 0;
 }
-.dropdownBtn{
-  width:100%;
+.dropdownBtn {
+  width: 100%;
 }
-.carousel-container{
-  width:500px;
-  margin:auto;
-  margin-top:5em;
-  position:relative;
+.carousel-container {
+  width: 500px;
+  margin: auto;
+  margin-top: 5em;
+  position: relative;
 }
-.slide{
+.slide {
   background-color: rgba(0, 0, 0, 0.075);
-  display:none;
-  position:relative;
-  .credit{
-    position:absolute;
-    padding:0 7px;
-    bottom:0;
-    right:0;
-    color:white;
-    >a{
-      color:white;
+  display: none;
+  position: relative;
+  .credit {
+    position: absolute;
+    padding: 0 7px;
+    bottom: 0;
+    right: 0;
+    color: white;
+    > a {
+      color: white;
     }
   }
-  .imageNumber{
-    position:absolute;
-    color:white;
+  .imageNumber {
+    position: absolute;
+    color: white;
   }
-  }
-  .slide img{
-    vertical-align: middle;
-    width:100%;
-    height:100%;
-  }
-.activeSlide{
-  display:block;
 }
-.arrow{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:3em;
-  padding:8px 0;
-  cursor:pointer;
+.slide img {
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
 }
-.arrow:hover{
-  background-color:rgba(0, 0, 0, 0.8);
+.activeSlide {
+  display: block;
 }
-.prevArrow{
-  left:0;
-  padding-right:var(--arrow-side-padding);
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3em;
+  padding: 8px 0;
+  cursor: pointer;
 }
-.nextArrow{
-  right:0;
-  padding-left:var(--arrow-side-padding);
+.arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
-.dots{
-  display:inline-block;
-  height:15px;
-  width:15px;
-  border-radius:50%;
-  background-color:var(--dots-not-active);
-  cursor:pointer;
+.prevArrow {
+  left: 0;
+  padding-right: var(--arrow-side-padding);
 }
-.dotsContainer{
-  margin-top:8px;
-  display:flex;
+.nextArrow {
+  right: 0;
+  padding-left: var(--arrow-side-padding);
+}
+.dots {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: var(--dots-not-active);
+  cursor: pointer;
+}
+.dotsContainer {
+  margin-top: 8px;
+  display: flex;
   justify-content: center;
-  gap:1ch;
+  gap: 1ch;
 }
-.dots:hover,.activeDot{
-  background-color:var(--dots-active);
+.dots:hover,
+.activeDot {
+  background-color: var(--dots-active);
 }
