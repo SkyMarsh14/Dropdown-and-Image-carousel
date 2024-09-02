@@ -1,11 +1,13 @@
 const slides = document.querySelectorAll(".slide");
 let slideIndex = 0;
 const getCurrentSlide = () => slides[slideIndex];
+const getCurrentSlideIndex=()=>slideIndex;
 const prevArrow = document.querySelector(".prevArrow");
 const nextArrow = document.querySelector(".nextArrow");
 const dots=document.querySelectorAll('.dots');
 
 function showSlide() {
+  markActiveDot();
   slides.forEach((slide) => slide.classList.remove("activeSlide"));
   const currentSlide = getCurrentSlide();
   currentSlide.classList.add("activeSlide");
@@ -25,14 +27,14 @@ nextArrow.addEventListener("click",()=>moveForward());
 
 dots.forEach((dot,index)=>{
   dot.addEventListener("click",()=>{
-    removeActiveClass();
-    dot.classList.add('activeDot');
     slideIndex=index;
+    markActiveDot();
     showSlide();
   })
 })
-function removeActiveClass(){
+function markActiveDot(){
   dots.forEach((d)=>d.classList.remove('activeDot'));
+  dots[getCurrentSlideIndex()].classList.add('activeDot');
 }
 
 export {showSlide,moveForward,moveBackward}
